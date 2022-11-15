@@ -1,0 +1,76 @@
+﻿@model IEnumerable<AdoExample.Models.Auto>
+
+@{
+    ViewBag.Title = "GetTable";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>GetTable</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateAuto")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Color)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductionYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BodyType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EngineVolume)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomsCLeared)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comment)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Color)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductionYear)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BodyType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EngineVolume)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomsCLeared)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comment)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditAuto", new { id=item.ID }) |
+            @Html.ActionLink("Details", "DetailsOfAuto", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "DeleteAuto", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
